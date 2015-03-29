@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChatFunModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--產生期間發現錯誤:
+警告 6013: 資料表/檢視 'ChatFun.dbo.ChatRecord' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+        <EntityType Name="ChatRecord">
+          <Property Name="no" Type="int" />
+          <Property Name="room_id" Type="int" />
+          <Property Name="SID" Type="int" />
+          <Property Name="RID" Type="int" />
+          <Property Name="chatDate" Type="date" />
+          <Property Name="chatTime" Type="datetime" />
+          <Property Name="content" Type="nvarchar(max)" />
+        </EntityType>-->
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="UserName" Type="int" />
+    <Property Name="RegDate" Type="datetime" />
+    <Property Name="lastLogin" Type="datetime" />
+    <Property Name="Password" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6013: 資料表/檢視 'ChatFun.dbo.FriendList' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+        <EntityType Name="FriendList">
+          <Property Name="SID" Type="int" />
+          <Property Name="RID" Type="int" />
+          <Property Name="status" Type="varchar" MaxLength="1" />
+          <Property Name="joindate" Type="datetime" />
+        </EntityType>-->
+  <EntityContainer Name="ChatFunModelStoreContainer">
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChatFunModelStoreContainer" CdmEntityContainer="ChatFunEntities1">
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="ChatFunModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="lastLogin" ColumnName="lastLogin" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
